@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CodeTemplate\IRepositoryTemplate.txt" />
+    <None Remove="CodeTemplate\IServicesTemplate.txt" />
+    <None Remove="CodeTemplate\ModelTemplate.txt" />
+    <None Remove="CodeTemplate\RepositoryTemplate.txt" />
+    <None Remove="CodeTemplate\ServiceTemplate.txt" />
+    <None Remove="QH.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CodeTemplate\IRepositoryTemplate.txt" />
+    <EmbeddedResource Include="CodeTemplate\IServicesTemplate.txt" />
+    <EmbeddedResource Include="CodeTemplate\ModelTemplate.txt" />
+    <EmbeddedResource Include="CodeTemplate\RepositoryTemplate.txt" />
+    <EmbeddedResource Include="CodeTemplate\ServiceTemplate.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.7.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog" Version="4.7.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+    <PackageReference Include="UAParser" Version="3.1.44" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QH.Dapper\QH.Dapper.csproj" />
+    <ProjectReference Include="..\QH.Models\QH.Models.csproj" />
+  </ItemGroup>
+
+</Project>

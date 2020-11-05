@@ -1,0 +1,112 @@
+﻿@using QH.Models;
+@model RoleEntity
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="~/component/pear/css/pear.css" />
+</head>
+<body>
+    <form class="layui-form" action="" >
+        <div class="mainBox" lay-filter="role-form">
+            <div class="main-container">
+                <div class="main-container">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label required">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" id="name"  lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="enabled" value="true" title="开启" @(Model.Enabled!=null&&Model.Enabled.Value ? "checked" : "")>
+                        <input type="radio" name="enabled" value="false" title="关闭" @(Model.Enabled!=null&&Model.Enabled.Value ? "" : "checked")>
+                           
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入描述" name="description" id="description" class="layui-textarea">@Model.Description</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="id" name="id" value="@Model.Id" />
+        </div>
+     
+        
+        <div class="bottom">
+            <div class="button-container">
+                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm role-save" lay-submit="" lay-filter="role-save">
+                    <i class="layui-icon layui-icon-ok"></i>
+                    提交
+                </button>
+                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                    重置
+                </button>
+            </div>
+        </div>
+    </form>
+    <script src="~/component/layui/layui.js"></script>
+    <script src="~/component/pear/pear.js"></script>
+    <script>
+        layui.use(['form', 'jquery'], function () {
+
+            let form = layui.form;
+            let $ = layui.jquery;
+            //let common = layui.common;
+            let MODULE_PATH = "/admin/role/";
+            //var id = common.request("id");
+            //var event = common.request("event");
+            //$(function () {
+            //    //   initControl();
+            //    if (event == "edit") {
+            //        $.ajax({
+            //            url: MODULE_PATH + "GetForm/" + id,
+            //            dataType: 'json',
+            //            type: 'get',
+            //            success: function (result) {
+            //                common.val('role-form', result);
+            //            }
+            //        })
+            //    }
+            //    else {
+
+            //    }
+            //    form.render();
+            //});
+
+
+            form.on('submit(role-save)', function (data) {
+                let loader = layer.load();
+                $(".role-save").html("<i class='layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-icon-loading' />");
+                alert(JSON.stringify(data.field));
+                $.ajax({
+                    url: MODULE_PATH + "SubmitForm",
+                    data: data.field,
+                    dataType: 'json',
+                    type: 'post',
+                    success: function (result) {
+                        layer.close(loader);
+                        if (result.success) {
+                            layer.msg(result.msg, { icon: 1, time: 1000 }, function () {
+                                parent.layer.close(parent.layer.getFrameIndex(window.name));//关闭当前页
+                                parent.layui.table.reload("role-table");
+                            });
+                        } else {
+                            layer.msg(result.msg, { icon: 2, time: 1000 });
+                        }
+                    }
+                })
+                return false;
+            });
+        })
+    </script>
+</body>
+</html>

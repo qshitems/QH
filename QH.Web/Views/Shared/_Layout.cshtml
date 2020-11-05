@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>后台管理系统--@ViewData["Title"]</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="~/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="~/layuiadmin/style/admin.css?v=5" media="all">
+    @RenderSection("scriptstop", false)
+</head>
+<body>
+    @RenderBody()
+    <script src="~/layuiadmin/layui/layui.js"></script>
+    @RenderSection("scriptsfeet", false)
+</body>
+</html>

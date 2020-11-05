@@ -3,3 +3,18 @@
 ################################################################################
 
 /JobManage.Service/bin
+/JobManage.Service/obj
+/QH.Api/bin
+/QH.Api/obj
+/QH.Core/bin
+/QH.Core/obj
+/QH.Dapper/bin
+/QH.Dapper/obj
+/QH.Models/bin
+/QH.Models/obj
+/QH.Repository/bin
+/QH.Repository/obj
+/QH.Services/bin
+/QH.Services/obj
+/QH.Web/bin
+/QH.Web/obj

@@ -1,0 +1,23 @@
+﻿
+/**
+*┌──────────────────────────────────────────────────────────────┐
+*│　描    述：{Comment}                                                    
+*│　作    者：{Author}                                              
+*│　版    本：1.0                                              
+*│　创建时间：{GeneratorTime}                           
+*└──────────────────────────────────────────────────────────────┘
+*┌──────────────────────────────────────────────────────────────┐
+*│　命名空间： {IServicesNamespace}                                   
+*│　接口名称： I{TableName}Repository                                      
+*└──────────────────────────────────────────────────────────────┘
+*/
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace {IServicesNamespace}
+{
+    public partial interface I{TableName}Service
+    {
+    }
+}

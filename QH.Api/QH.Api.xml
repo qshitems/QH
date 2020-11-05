@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QH.Api</name>
+    </assembly>
+    <members>
+        <member name="T:QH.Api.Attributes.LoginAttribute">
+            <summary>
+            启用登录
+            </summary>
+        </member>
+        <member name="T:QH.Api.Attributes.NoOprationLogAttribute">
+            <summary>
+            禁用操作日志
+            </summary>
+        </member>
+        <member name="T:QH.Api.Attributes.ValidateInputAttribute">
+            <summary>
+            输入模型验证
+            </summary>
+        </member>
+        <member name="T:QH.Api.Attributes.VersionRouteAttribute">
+            <summary>
+            自定义路由 /api/{version}/[area]/[controler]/[action]
+            </summary>
+        </member>
+        <member name="T:QH.Api.Controllers.admin.AuthController">
+            <summary>
+            授权管理
+            </summary>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.GetToken(QH.Core.Result.ResultModel{QH.Models.AuthLoginOutput})">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.GetTest(System.String)">
+            <summary>
+            测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.GetVerifyCode(System.String)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="lastKey">上次验证码键</param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.GetPassWordEncryptKey">
+            <summary>
+            获取密钥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.GetUserInfo">
+            <summary>
+            查询用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.AuthController.Login(QH.Models.AuthLoginInput)">
+            <summary>
+            用户登录
+            根据登录信息生成Token
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:QH.Api.Controllers.admin.PermissionController">
+            <summary>
+            权限管理
+            </summary>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetList(System.String)">
+            <summary>
+            查询权限列表
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetGroup(System.Int32)">
+            <summary>
+            查询单条分组
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetMenu(System.Int32)">
+            <summary>
+            查询单条菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetApi(System.Int32)">
+            <summary>
+            查询单条接口
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetDot(System.Int32)">
+            <summary>
+            查询单条权限点
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetPermissionList">
+            <summary>
+            查询角色权限-权限列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.GetRolePermissionList(System.Int32)">
+            <summary>
+            查询角色权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.AddGroup(QH.Models.PermissionAddGroupInput)">
+            <summary>
+            新增分组
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.AddMenu(QH.Models.PermissionAddMenuInput)">
+            <summary>
+            新增菜单
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.AddApi(QH.Models.PermissionAddApiInput)">
+            <summary>
+            新增接口
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.AddDot(QH.Models.PermissionAddDotInput)">
+            <summary>
+            新增权限点
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.UpdateGroup(QH.Models.PermissionUpdateGroupInput)">
+            <summary>
+            修改分组
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.UpdateMenu(QH.Models.PermissionUpdateMenuInput)">
+            <summary>
+            修改菜单
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.UpdateApi(QH.Models.PermissionUpdateApiInput)">
+            <summary>
+            修改接口
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.UpdateDot(QH.Models.PermissionUpdateDotInput)">
+            <summary>
+            修改权限点
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.SoftDelete(System.Int32)">
+            <summary>
+            删除权限
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.PermissionController.Assign(QH.Models.PermissionAssignInput)">
+            <summary>
+            保存角色权限
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.Get(System.Int32)">
+            <summary>
+            查询单条角色
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.Page(QH.Models.RoleListInput)">
+            <summary>
+            查询分页角色
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.Add(QH.Models.RoleAddInput)">
+            <summary>
+            新增角色
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.Update(QH.Models.RoleUpdateInput)">
+            <summary>
+            修改角色
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.SoftDelete(System.Int32)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.RoleController.BatchSoftDelete(System.Int32[])">
+            <summary>
+            批量删除角色
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QH.Api.Controllers.admin.UserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.GetBasic">
+            <summary>
+            查询用户基本信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.Get(System.Int64)">
+            <summary>
+            查询单条用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.GetPage(QH.Core.Input.PageInput{QH.Models.UserListInput})">
+            <summary>
+            查询分页用户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.Add(QH.Models.UserAddInput)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.Update(QH.Models.UserUpdateInput)">
+            <summary>
+            修改用户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.SoftDelete(System.Int32)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.BatchSoftDelete(System.Int32[])">
+            <summary>
+            批量删除用户
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.ChangePassword(QH.Models.UserChangePasswordInput)">
+            <summary>
+            更新用户密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.UpdateBasic(QH.Models.UserUpdateBasicInput)">
+            <summary>
+            更新用户基本信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QH.Api.Controllers.admin.UserController.AvatarUpload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传头像
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QH.Api.Controllers.BaseController">
+            <summary>
+            基础控制器
+            </summary>
+        </member>
+        <member name="T:QH.Api.Enums.ApiVersion">
+            <summary>
+            接口版本
+            </summary>
+        </member>
+        <member name="F:QH.Api.Enums.ApiVersion.V1">
+            <summary>
+            V1 版本
+            </summary>
+        </member>
+        <member name="F:QH.Api.Enums.ApiVersion.V2">
+            <summary>
+            V2 版本
+            </summary>
+        </member>
+        <member name="T:QH.Api.Filters.AdminExceptionFilter">
+            <summary>
+            异常错误过滤
+            </summary>
+        </member>
+        <member name="T:QH.Apie.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="T:Admin.Core.Auth.IPermissionHandler">
+            <summary>
+            权限处理接口
+            </summary>
+        </member>
+        <member name="M:Admin.Core.Auth.IPermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="httpMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Core.Auth.PermissionHandler">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:Admin.Core.Auth.PermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name = "api"> 接口路径 </param>
+            <param name="httpMethod">http请求方法</param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Core.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:Admin.Core.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:Admin.Core.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Core.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+    </members>
+</doc>

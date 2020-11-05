@@ -1,0 +1,63 @@
+﻿
+/**
+*┌──────────────────────────────────────────────────────────────┐
+*│　描    述：{Comment}接口实现                                                    
+*│　作    者：{Author}                                            
+*│　版    本：1.0                                              
+*│　创建时间：{GeneratorTime}                             
+*└──────────────────────────────────────────────────────────────┘
+*┌──────────────────────────────────────────────────────────────┐
+*│　命名空间： {RepositoryNamespace}                                  
+*│　类    名： {ModelName}Repository                                      
+*└──────────────────────────────────────────────────────────────┘
+*/
+using QH.IRepository;
+using QH.Models;
+using Dapper;
+using System.Threading.Tasks;
+using QH.Core.Auth;
+
+namespace {RepositoryNamespace}
+{
+    public partial class {TableName}Repository:BaseRepository<{ModelName}>, I{TableName}Repository
+    {
+        public {TableName}Repository(IUser user) : base( user)
+        {
+        }
+
+		public int DeleteLogical(int[] ids)
+        {
+            string sql = "update {ModelName} set IsDelete=1 where Id in @Ids";
+          
+               return Connection.Execute(sql, new
+                {
+                    Ids = ids
+                });
+           
+        }
+
+        public async Task<int> DeleteLogicalAsync(int[] ids)
+        {
+            string sql = "update {ModelName} set IsDelete=1 where Id in @Ids";
+           
+                return await _Connection.ExecuteAsync(sql, new
+                {
+                    Ids = ids
+                });
+            
+        }
+        public bool UpdateBysql({ModelName} model)
+        {
+            {UpdateByTableName}
+            return Connection.Execute(sql, model) > 0 ;
+        }
+
+        public async Task<bool> UpdateAsyncBysql({ModelName} model)
+        {
+            {UpdateByTableName}
+            return await Connection.ExecuteAsync(sql, model) > 0 ;
+        }
+
+
+    }
+}

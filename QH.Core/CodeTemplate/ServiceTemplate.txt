@@ -1,0 +1,31 @@
+﻿
+/**
+*┌──────────────────────────────────────────────────────────────┐
+*│　描    述：{Comment}                                                    
+*│　作    者：{Author}                                            
+*│　版    本：1.0                                                 
+*│　创建时间：{GeneratorTime}                             
+*└──────────────────────────────────────────────────────────────┘
+*┌──────────────────────────────────────────────────────────────┐
+*│　命名空间： {ServicesNamespace}                                  
+*│　类    名： {ModelName}Service                                    
+*└──────────────────────────────────────────────────────────────┘
+*/
+using QH.IRepository;
+using QH.IServices;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace {ServicesNamespace}
+{
+    public partial class {TableName}Service: I{TableName}Service
+    {
+        private readonly I{TableName}Repository _repository;
+
+        public {TableName}Service(I{TableName}Repository repository)
+        {
+            _repository = repository;
+        }
+    }
+}
