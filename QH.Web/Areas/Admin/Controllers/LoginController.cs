@@ -42,10 +42,21 @@ namespace QH.Web.Areas.Admin.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            var result = _authApi.Test(11);
+            //  var result = _authApi.Test(11);
 
             //  _CodeGenerator.GenerateTemplateCodesFromDatabase();
+
+            var ttt = Foo(6);
             return View();
+        }
+
+        public static int Foo(int i)
+        {
+            if (i <= 0)
+                return 0;
+            else if (i > 0 && i <= 2)
+                return 1;
+            else return Foo(i - 1) + Foo(i - 2);
         }
 
         /// <summary>

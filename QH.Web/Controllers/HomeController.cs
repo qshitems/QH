@@ -36,16 +36,21 @@ namespace QH.Web.Controllers
             // await HttpContext.SignInAsync("Cookies", new ClaimsPrincipal(claimsIdentity));
         }
 
+
         public IActionResult Index()
         {
-            _CodeGenerator.GenerateTemplateCodesFromDatabase();
+           // _CodeGenerator.GenerateTemplateCodesFromDatabase();
             // _userService.test();
-          
-        
+    
+
+
             return View();
         }
 
-        public IActionResult Privacy()
+    
+    
+
+    public IActionResult Privacy()
         {
             return View();
         }
